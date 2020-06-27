@@ -8,5 +8,16 @@ const int MOD = 1000000007;
 // MAX O(n) 10^18
 
 int main() {
+    string S, T;
+    cin >> S >> T;
+
+    string ans = "No";
+    rep(i, S.size()) {
+        if (S == T) ans = "Yes";
+        S = S.back() + S.substr(0, S.size() - 1);
+    }
+
+    cout << ans << endl;
+
     return 0;
 }

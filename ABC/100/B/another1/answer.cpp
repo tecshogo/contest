@@ -8,5 +8,18 @@ const int MOD = 1000000007;
 // MAX O(n) 10^18
 
 int main() {
+    int D, N;
+    cin >> D >> N;
+
+    int ans;
+    if (N == 100) {
+        if (D == 0) ans = 101;
+        if (D == 1) ans = 10100;
+        if (D == 2) ans = 1010000;
+    } else {
+        ans = pow(100, D) * N;
+    }
+
+    cout << ans << endl;
     return 0;
 }
