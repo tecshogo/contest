@@ -17,5 +17,19 @@ ll myLongLongPow(ll base, ll times) {
 // MAX O(n) 10^18 -> 18回
 
 int main() {
+    int N, K;
+    cin >> N >> K;
+    vector<int> p(N);
+    rep(i, N) cin >> p.at(i);
+
+    sort(p.begin(), p.end());
+
+    int ans = 0;
+    rep(i, K) {
+        ans += p.at(i);
+    }
+
+    cout << ans << endl;
+
     return 0;
 }
