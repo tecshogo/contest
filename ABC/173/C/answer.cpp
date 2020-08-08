@@ -9,37 +9,25 @@ const int MOD = 1000000007;
 // MAX O(n) 10^18 -> 18回
 
 // 参考にした回答
-// https://atcoder.jp/contests/abc173/submissions/14969770
-// なぜ動くか分からない回答
-// https://atcoder.jp/contests/abc173/submissions/14966777
+// https://atcoder.jp/contests/abc173/submissions/15024500
 
 int main() {
     int h, w, k;
     cin >> h >> w >> k;
-    vector<string> c(h);
-    for (int i = 0; i < h; ++i) {
-        cin >> c[i];
-    }
+    vector<string> s(h);
+    rep(i, h) cin >> s.at(i);
 
     int ans = 0;
-    for (int i = 0; i < (1 << h); i++) {      // Hのパターン
-        for (int j = 0; j < (1 << w); j++) {  // Wのパターン
-            vector<string> cp = c;
-            int cnt = 0;
-            for (int ii = 0; ii < h; ++ii) {
-                for (int jj = 0; jj < w; ++jj) {
-                    if(i & (1 << ii) || (j & (1 << jj))) {
-                        cp[ii][jj] = '?';
-                    }
-                    if(cp[ii][jj] == '#') {
-                        cnt++;
-                    }
-                }
-            }
-            ans += (cnt == k);
+    rep(is, 1 << h) rep(js, 1 << w) {
+        int cnt = 0;
+        rep(i, h) rep(j, w) {
+            if (is >> i & 1) continue;
+            if (js >> j & 1) continue;
+            if (s.at(i).at(j) == '#') cnt++;
         }
+        if (cnt == k) ans++;
     }
-
+    
     cout << ans << endl;
 
     return 0;
