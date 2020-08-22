@@ -9,6 +9,17 @@ const int MOD = 1000000007;
 // MAX O(n) 10^18 -> 18回
 // double pi = M_PI or acos(-1)
 
+
 int main() {
+    int a, b, h, m;
+    cin >> a >> b >> h >> m;
+
+    // 角度を求める
+    double cAngle = 2 * M_PI * (((h + (double)m / 60) / 12) - (double)m / 60);
+    double tmp = a * a + b * b - 2 * a * b * cos(cAngle);
+    double ans = sqrt(tmp);
+
+    cout << fixed << setprecision(9) << ans << endl;
+
     return 0;
 }

@@ -27,7 +27,7 @@ int main() {
         }
         if (cnt == k) ans++;
     }
-    
+
     cout << ans << endl;
 
     return 0;

@@ -23,3 +23,27 @@ void dump(int H, int W) {
         }
     }
 }
+
+// 10 -> 26進数変換
+string convert(int n) {
+    string result;
+
+    // if (n == 0) return "a";
+    while (n > 0) {
+        n--;
+        int c = n % 26;
+        n /= 26;
+        result += 'a' + c;
+    }
+
+    reverse(result.begin(), result.end());
+    return result;
+}
+
+int main() {
+    int test;
+    cin >> test;
+    string ans = convert(test);
+    cout << ans << endl;
+    return 0;
+}
