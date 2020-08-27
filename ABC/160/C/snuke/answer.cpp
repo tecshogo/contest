@@ -8,8 +8,22 @@ const int MOD = 1000000007;
 // MAX ll 9,223,372,036,854,775,807 -> 19桁
 // MAX O(n) 10^18 -> 18回
 // double pi = M_PI or acos(-1)
-// printf("%.10f\n", ans);
 
 int main() {
+    int k, n;
+    cin >> k >> n;
+    vector<int> a(n);
+    rep(i, n) cin >> a.at(i);
+    a.push_back(k + a.at(0));
+
+    int l = 0;
+    rep(i, n) {
+        l = max(l, a.at(i + 1) - a.at(i));
+    }
+
+    int ans = k - l;
+
+    cout << ans << endl;
+
     return 0;
 }

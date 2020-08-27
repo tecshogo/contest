@@ -11,5 +11,18 @@ const int MOD = 1000000007;
 // printf("%.10f\n", ans);
 
 int main() {
+    int a, b;
+    cin >> a >> b;
+
+    int ans = -1;
+    for (int i = 2000; i > 0; i--) {
+        
+        if((int)(i * 0.08) == a && (int)(i * 0.1) == b) {
+            ans = i;
+        }
+    }
+
+    cout << ans << endl;
+
     return 0;
 }

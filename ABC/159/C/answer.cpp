@@ -11,5 +11,10 @@ const int MOD = 1000000007;
 // printf("%.10f\n", ans);
 
 int main() {
+    double l;
+    cin >> l;
+    double x = l / 3;
+    double ans = pow(x, 3);
+    cout << fixed << setprecision(10) << ans << endl;
     return 0;
 }
