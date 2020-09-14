@@ -11,5 +11,21 @@ const int MOD = 1000000007;
 // printf("%.10f\n", ans);
 
 int main() {
+    int n;
+    cin >> n;
+    vector<int> p(n), q(n);
+    rep(i, n) cin >> p.at(i);
+    rep(i, n) cin >> q.at(i);
+    vector<int> a(n);
+    rep(i, n) a.at(i) = i + 1;
+
+    map<vector<int>, int> mp;
+    do {
+        mp[a] = mp.size();
+    } while (next_permutation(a.begin(), a.end()));
+
+    int ans = abs(mp[p] - mp[q]);
+    cout << ans << endl;
+
     return 0;
 }

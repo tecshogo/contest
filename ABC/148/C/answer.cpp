@@ -11,5 +11,13 @@ const int MOD = 1000000007;
 // printf("%.10f\n", ans);
 
 int main() {
+    ll a, b;
+    cin >> a >> b;
+    ll c = __gcd(a, b);
+
+    ll ans = a * b / c;
+
+    cout << ans << endl;
+
     return 0;
 }

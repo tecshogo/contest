@@ -10,6 +10,23 @@ const int MOD = 1000000007;
 // double pi = M_PI or acos(-1)
 // printf("%.10f\n", ans);
 
+bool isPrime(int x) {
+    if (x <= 1) return false;
+    for (int i = 2; i * i <= x; i++) {
+        if (x % i == 0) return false;
+    }
+    return true;
+}
+
 int main() {
+    int x;
+    cin >> x;
+
+    while(!isPrime(x)) {
+        x++;
+    }
+
+    cout << x << endl;
+
     return 0;
 }
