@@ -12,5 +12,18 @@ const int INF = 1001001001;
 // printf("%.10f\n", ans);
 
 int main() {
+    int n;
+    cin >> n;
+    vector<ll> h(n);
+    rep(i, n) cin >> h.at(i);
+    reverse(h.begin(), h.end());
+    int ans = 0;
+    int val = 0;
+    for (int i = 1; i < n; i++) {
+        if (h[i - 1] <= h[i]) val++;
+        else val = 0;
+        ans = max(ans, val);
+    }
+    cout << ans << endl;
     return 0;
 }
